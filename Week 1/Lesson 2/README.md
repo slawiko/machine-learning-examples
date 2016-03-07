@@ -38,6 +38,12 @@ importances = clf.feature_importances_
 np.isnan(X)
 ```
 
+### Материалы
+
+* [Подробнее про решающие деревья в sklearn](http://scikit-learn.org/stable/modules/tree.html)
+* [Работа с пропущенными значениями в pandas](http://pandas.pydata.org/pandas-docs/stable/missing_data.html)
+* [Подробнее о деревьях и их построении](https://github.com/esokolov/ml-course-msu/blob/master/ML15/lecture-notes/Sem04_trees.pdf)
+
 ### Инструкция по выполнению
 
 1. Загрузите выборку из файла [titanic.csv](../titanic.csv) с помощью пакета Pandas.
