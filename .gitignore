@@ -39,6 +39,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+share/
 env/
 build/
 develop-eggs/
