@@ -16,43 +16,36 @@
 
 ### Инструкция по выполнению
 
-<ol>
-<li>Загрузите файл [classification.csv](../classification.csv). В нем записаны истинные классы объектов выборки (колонка true) и ответы некоторого классификатора (колонка predicted).</li>
+1. Загрузите файл [classification.csv](../classification.csv). В нем записаны истинные классы объектов выборки (колонка true) и ответы некоторого классификатора (колонка predicted).
 
-<li>Подсчитайте величины TP, FP, FN и TN согласно их определениям. Например, FP — это количество объектов, имеющих класс 0, но отнесенных алгоритмом к классу 1. Ответ в данном вопросе — четыре числа через пробел. Заполните таблицу ошибок классификации:
+2. Подсчитайте величины TP, FP, FN и TN согласно их определениям. Например, FP — это количество объектов, имеющих класс 0, но отнесенных алгоритмом к классу 1. Ответ в данном вопросе — четыре числа через пробел. Заполните таблицу ошибок классификации:
 
-|                    | Actual Positive | Actual Negative |
-|:------------------:|:---------------:|:---------------:|
-| Predicted Positive | TP              | FP              |
-| Predicted Negative | FN              | TN              |
+  |                    | Actual Positive | Actual Negative |
+  |:------------------:|:---------------:|:---------------:|
+  | Predicted Positive | TP              | FP              |
+  | Predicted Negative | FN              | TN              |
 
-</li>
-<li>Посчитайте основные метрики качества классификатора:
 
-* Accuracy (доля верно угаданных) — [sklearn.metrics.accuracy_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
+3. Посчитайте основные метрики качества классификатора:
+  * Accuracy (доля верно угаданных) — [sklearn.metrics.accuracy_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
+  
+  * Precision (точность) — [sklearn.metrics.precision_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)
+  
+  * Recall (полнота) — [sklearn.metrics.recall_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)
+  
+  * F-мера — [sklearn.metrics.f1_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)
 
-* Precision (точность) — [sklearn.metrics.precision_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)
+4. Имеется четыре обученных классификатора. В файле [scores.csv](../scores.csv) записаны истинные классы и значения степени принадлежности положительному классу для каждого классификатора на некоторой выборке:
+  * для логистической регрессии — вероятность положительного класса (колонка score_logreg),
+  
+  * для SVM — отступ от разделяющей поверхности (колонка score_svm),
+  
+  * для метрического алгоритма — взвешенная сумма классов соседей (колонка score_knn),
+  
+  * для решающего дерева — доля положительных объектов в листе (колонка score_tree).
 
-* Recall (полнота) — [sklearn.metrics.recall_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)
+5. Посчитайте площадь под ROC-кривой для каждого классификатора. Какой классификатор имеет наибольшее значение метрики AUC-ROC (укажите название столбца)? Воспользуйтесь функцией [sklearn.metrics.roc_auc_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html).
 
-* F-мера — [sklearn.metrics.f1_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)
+6. Какой классификатор достигает наибольшей точности (Precision) при полноте (Recall) не менее 70% ? Какое значение точности при этом получается?
 
-В качестве ответа укажите эти четыре числа через пробел.
-</li>
-<li>Имеется четыре обученных классификатора. В файле [scores.csv](../scores.csv) записаны истинные классы и значения степени принадлежности положительному классу для каждого классификатора на некоторой выборке:
-
-* для логистической регрессии — вероятность положительного класса (колонка score_logreg),
-
-* для SVM — отступ от разделяющей поверхности (колонка score_svm),
-
-* для метрического алгоритма — взвешенная сумма классов соседей (колонка score_knn),
-
-* для решающего дерева — доля положительных объектов в листе (колонка score_tree).
-
-</li>
-<li>Посчитайте площадь под ROC-кривой для каждого классификатора. Какой классификатор имеет наибольшее значение метрики AUC-ROC (укажите название столбца)? Воспользуйтесь функцией [sklearn.metrics.roc_auc_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html).
-</li>
-<li>Какой классификатор достигает наибольшей точности (Precision) при полноте (Recall) не менее 70% ? Какое значение точности при этом получается?
-</li>
-</ol>
 Чтобы получить ответ на этот вопрос, найдите все точки precision-recall-кривой с помощью функции [sklearn.metrics.precision_recall_curve](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_curve.html). Она возвращает три массива: precision, recall, thresholds. В них записаны точность и полнота при определенных порогах, указанных в массиве thresholds. Найдите максимальной значение точности среди тех записей, для которых полнота не меньше, чем 0.7.
