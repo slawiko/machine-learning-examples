@@ -4,9 +4,9 @@ Machine learning examples on python 2.7
 
 ### Содержание
 
-* [Week 1](Week 1)
-  - [Lesson 1: Data Preprocessing in Pandas](../Week 1/Lesson 1: Data Preprocessing in Pandas/README.md)
-  - [Lesson 2: Signs Importance](Week 1/Lesson 2: Signs Importance/README.md)
+* [Week 1]("./Week 1")
+  - [Lesson 1: Data Preprocessing in Pandas](../Week\ 1/Lesson\ 1:\ Data\ Preprocessing\ in\ Pandas/README.md)
+  - [Lesson 2: Signs Importance]("Week 1/Lesson 2: Signs Importance/README.md")
 * [Week 2](Week 2)
   - [Lesson 1: Number of Neighbors Selection](Week 2/Lesson 1: Number of Neighbors Selection/README.md)
   - [Lesson 2: Metric Selection](Week 2/Lesson 2: Metric Selection/README.md)
