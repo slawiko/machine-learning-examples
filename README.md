@@ -8,7 +8,7 @@ Machine learning examples on python 2.7
   - [Lesson 1: Data Preprocessing in Pandas](Week_1/Lesson_1_Data_Preprocessing_in_Pandas/README.md)
   - [Lesson 2: Signs Importance](Week_1/Lesson_2_Signs_Importance/README.md")
 * Week 2
-  - [Lesson 1: Number of Neighbors Selection](Week_2/Lesson_1_Number_of_Neighbors Selection/README.md)
+  - [Lesson 1: Number of Neighbors Selection](Week_2/Lesson_1_Number_of_Neighbors_Selection/README.md)
   - [Lesson 2: Metric Selection](Week_2/Lesson_2_Metric_selection/README.md)
   - [Lesson 3: Signs Normalization](Week_2/Lesson_3_Signs_Normalization/README.md)
 * Week 3
